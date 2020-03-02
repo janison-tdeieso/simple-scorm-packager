@@ -35,7 +35,6 @@ var settings = {
   organization: "",
   title: getPackageName(),
   identifier: "",
-  masteryScore: 80,
   startingPage: "index.html",
   package: {
     zip: true
@@ -91,14 +90,6 @@ var cli_init = function(next){
     },
     {
       type: "input",
-      name: "masteryScore",
-      message: "Select mastery score [Range 0-100]:",
-      default: settings.masteryScore,
-      filter: Number,
-      validate: validators.number
-    },
-    {
-      type: "input",
       name: "startingPage",
       message: "Select starting page:",
       default: settings.startingPage,
@@ -112,7 +103,6 @@ var cli_init = function(next){
       settings.title = answers.title;
       settings.organization = answers.organization;
       settings.language = answers.language;
-      settings.masteryScore = answers.masteryScore;
       settings.startingPage = answers.startingPage;
       next();
     });

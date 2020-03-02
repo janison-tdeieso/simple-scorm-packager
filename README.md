@@ -1,5 +1,9 @@
 `version 0.2.5`
 
+## Modifications
+
+* Removed masteryScore from manifest due to requirement of some LMS's for a course without an assessment. Warning: Only tested with SCORM 1.2!
+
 ## Documentation
 
 Creates SCORM package from source directory.
@@ -27,7 +31,6 @@ npm install simple-scorm-packager
 * `title` {string} ['']
 * `identifier` {string} [null] If empty, identifier is generated using:
 \`${package.author || 'com'}.${organization || 'company'}.${title || ''}.${generated uuid}\`
-* `masteryScore` {number} [80]
 * `startingPage` {string} ['index.html']
 * `source` {string} ['./'] The path to files from which the package will be created
 * `package` {object} Available options:
@@ -69,7 +72,6 @@ npm install simple-scorm-packager
     title: 'Test Course',
     language: 'fr-FR',
     identifier: '00',
-    masteryScore: 80,
     startingPage: 'index.html',
     source: './myProjectFolder',
     package: {
@@ -95,7 +97,6 @@ If you are packaging a project which utilizes npm and has a package.json file, f
     organization: 'My Amazing Company',
     title: 'Test Course',
     language: 'en-US',
-    masteryScore: 80,
     startingPage: 'index.html',
     source: path.join(__dirname, 'build'),
     package: {
